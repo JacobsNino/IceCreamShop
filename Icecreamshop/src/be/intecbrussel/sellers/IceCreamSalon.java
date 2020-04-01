@@ -6,7 +6,7 @@ import be.intecbrussel.eatables.IceRocket;
 import be.intecbrussel.eatables.Magnum;
 import be.intecbrussel.eatables.Magnum.MagnumType;
 
-public class IceCreamSalon implements IceCreamSeller {
+public class IceCreamSalon implements IceCreamSeller{
 	public  PriceList priceList;
 	public double totalProfit;
 
@@ -23,24 +23,26 @@ public class IceCreamSalon implements IceCreamSeller {
 
 	@Override
 	public Cone orderCone(Flavor[] balls) {
-		// TODO make a new cone and return it and with the pricelist the value of totalprice will go up
-		return null;
+		for(int i = 0; i < balls.length;i++) {
+			totalProfit += priceList.getBallPrice();
+		}
+		return new Cone(balls);
 	}
 	@Override
 	public IceRocket orderIceRocket() {
-		// TODO Auto-generated method stub
-		return null;
+		totalProfit += priceList.getRocketPrice();
+		return new IceRocket();
 	}
 	@Override
 	public Magnum orderMagnum(MagnumType MagnumChoice) {
-		// TODO Auto-generated method stub
-		return null;
+		totalProfit += priceList.getMagnumPrice(MagnumChoice);
+		return new Magnum(MagnumChoice);
 	}
 
 
 	@Override
 	public String toString() {
-		return "IceCreamSalon [priceList=" + priceList + ", totalProfit=" + totalProfit + "]";
+		return "IceCreamSalon [ totalProfit=" + totalProfit + "]";
 	}	
 	
 }

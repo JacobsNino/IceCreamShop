@@ -1,5 +1,7 @@
 package be.intecbrussel.sellers;
 
+import be.intecbrussel.eatables.Magnum.MagnumType;
+
 public class PriceList {
 	public double ballPrice;
 	public double rocketPrice;
@@ -26,12 +28,18 @@ public class PriceList {
 	public void setRocketPrice(double rocketPrice) {
 		this.rocketPrice = rocketPrice;
 	}
-	public double getMagnumStandardPrice() {
+	public double getMagnumPrice(MagnumType type) {
+		if(type == MagnumType.ALPINENUTS|| type == MagnumType.ROMANTICSSTRAWBERRIES) {
+			return magnumStandardPrice * 1.5;
+		}else {
 		return magnumStandardPrice;
 	}
+	}
+	
 	public void setMagnumStandardPrice(double magnumStandardPrice) {
 		this.magnumStandardPrice = magnumStandardPrice;
 	}
+	
 	
 	
 	

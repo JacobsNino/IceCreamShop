@@ -1,6 +1,6 @@
 package be.intecbrussel.eatables;
 
-public class Magnum {
+public class Magnum implements Eatable {
 	public enum MagnumType {
 		MILKCHOCOLATE,WHITECHOCOLATE,BLACKCHOCOLATE,ALPINENUTS,ROMANTICSSTRAWBERRIES;
 	}

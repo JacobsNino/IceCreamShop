@@ -1,9 +1,9 @@
 package be.intecbrussel.eatables;
 
-public class Eatable {
+public interface Eatable {
 	
-	public void eat() {
+	public void eat();
 		
-	}
+	
 
 }
